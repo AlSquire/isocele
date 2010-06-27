@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+yotsuba:
+  category: anime 
+
+azumanga_daioh:
+  category: anime
+  
+<% 10.times do |i| %>
+random_<%= i %>:
+  category: random
+<% end %>
