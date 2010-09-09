@@ -29,5 +29,5 @@
             #flash= flash[:notice]
           = yield
       #footer.span-24.last
-        = yield(:footer) || render(:partial => '/layouts/footer')
+        = yield(:footer) || "foot"
       = render :partial => '/layouts/google_analytics' if Rails.env.production?
