@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-anime:
-  name: Anime
-  short_name: a
-
-random:
-  name: Random
-  short_name: b
