@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100910005239) do
+ActiveRecord::Schema.define(:version => 20100910010639) do
 
   create_table "categories", :force => true do |t|
-    t.text     "name"
-    t.text     "shortcut"
+    t.string   "name"
+    t.string   "shortcut"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
