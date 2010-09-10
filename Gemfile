@@ -14,7 +14,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+# gem 'ruby-debug' # Can't use yet, gem linecache fail to build (using ruby 1.9.2)
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -25,6 +25,11 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'webrat'
+  gem 'factory_girl'
+  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'autotest'
+end
+
+gem 'haml'
