@@ -23,4 +23,34 @@ describe Post do
   its(:created_at) { should be_a(Time) }
 
   it { should respond_to(:post_thread) }
+
+  describe "Creating a Post" do
+    it do
+      @post = Factory.create(:post)
+      @post.should be_valid
+    end
+
+    it "should belongs to a PostThread with a post_thread_id" do
+      post_thread = Factory.create(:post_thread)
+      post = Factory.create(:post, :post_thread_id => post_thread.id)
+      post.should be_valid
+      post.post_thread.should == post_thread
+    end
+
+    it "should create a new PostThread without a post_thread_id and with category_id" do
+      category = Factory.create(:category)
+      post = Factory.create(:post, :post_thread_id => nil, :category_id => category.id)
+      post.should be_valid
+      post.post_thread.posts.count.should == 1
+      post.post_thread.category.should == category
+    end
+
+    it "should not valid without a post_thread_id nor a category_id" do
+      post = Factory.build(:post, :post_thread_id => nil, :category_id => nil)
+      post.save
+      post.should_not be_valid
+      post.post_thread.should be_new_record
+    end
+  end
+
 end
