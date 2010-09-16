@@ -54,8 +54,15 @@ Isocele::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
-  
-  # TODO: rethink REST
-  # match ':category_shortcut' => 'post_threads#index'
+  # match ':controller(/:action(/:id(.:format)))'
+
+  # TODO: see if a specialized option for method constraint exists
+  controller :post_threads do
+    match ':category_shortcut', :action => "index", :constraints => { :method => "GET" }
+    match ':category_shortcut/:id', :action => "show", :constraints => { :method => "GET" }
+    match ':category_shortcut/:id', :action => "create", :constraints => { :method => "POST" }
+    match ':category_shortcut/:id', :action => "update", :constraints => { :method => "PUT" }
+  end
+
+  # TODO: rethink REST?
 end
