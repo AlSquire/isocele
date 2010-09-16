@@ -4,13 +4,13 @@ class Post < ActiveRecord::Base
   belongs_to :post_thread
 
   validates_associated :post_thread
-  validates_presence_of :post_thread_id
+  validates_presence_of :post_thread
 
-  before_validation :on => :create, :if => :first_post_of_the_thread? do
-    create_post_thread(:category_id => category_id)
+  before_validation :on => :create, :if => :first_of_the_thread? do
+    build_post_thread(:category_id => category_id)
   end
 
-  def first_post_of_the_thread?
+  def first_of_the_thread?
     if new_record?
       post_thread.nil?
     else

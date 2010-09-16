@@ -24,20 +24,20 @@ describe Post do
 
   it { should respond_to(:post_thread) }
 
-  describe "Creating a Post" do
+  describe "creation" do
     it do
       @post = Factory.create(:post)
       @post.should be_valid
     end
 
-    it "should belongs to a PostThread with a post_thread_id" do
+    it " with a post_thread_id should belongs to a PostThread" do
       post_thread = Factory.create(:post_thread)
       post = Factory.create(:post, :post_thread_id => post_thread.id)
       post.should be_valid
       post.post_thread.should == post_thread
     end
 
-    it "should create a new PostThread without a post_thread_id and with category_id" do
+    it "without a post_thread_id but with a category_id should create a new PostThread" do
       category = Factory.create(:category)
       post = Factory.create(:post, :post_thread_id => nil, :category_id => category.id)
       post.should be_valid
@@ -45,7 +45,7 @@ describe Post do
       post.post_thread.category.should == category
     end
 
-    it "should not valid without a post_thread_id nor a category_id" do
+    it "without a post_thread_id nor a category_id should not valid" do
       post = Factory.build(:post, :post_thread_id => nil, :category_id => nil)
       post.save
       post.should_not be_valid
