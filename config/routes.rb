@@ -58,10 +58,10 @@ Isocele::Application.routes.draw do
 
   # TODO: see if a specialized option for method constraint exists
   controller :post_threads do
-    match ':category_shortcut', :action => "index", :constraints => { :method => "GET" }
-    match ':category_shortcut/:id', :action => "show", :constraints => { :method => "GET" }
-    match ':category_shortcut/:id', :action => "create", :constraints => { :method => "POST" }
-    match ':category_shortcut/:id', :action => "update", :constraints => { :method => "PUT" }
+    get  ':category_shortcut',     :action => "index"
+    post ':category_shortcut',     :action => "create"
+    get  ':category_shortcut/:id', :action => "show"
+    post ':category_shortcut/:id', :action => "update"
   end
 
   # TODO: rethink REST?
