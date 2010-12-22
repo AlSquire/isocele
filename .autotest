@@ -1,5 +1,0 @@
-# Tell autotest to watch spec/requests folder
-# TODO: remove with future version of rspec2 which already include this change
-Autotest.add_hook(:initialize) do |at|
-  at.add_mapping(%r%^spec/requests/.*rb$%) { |filename, _| filename }
-end
