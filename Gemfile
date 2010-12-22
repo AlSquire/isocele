@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -26,10 +26,15 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'webrat'
-  gem 'factory_girl'
-  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
   gem 'autotest'
+  gem 'shoulda'
 end
 
 gem 'haml'
+# gem 'paperclip'
+gem 'will_paginate', '~> 3.0.pre2'
+gem 'seed-fu'
