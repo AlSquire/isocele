@@ -13,5 +13,5 @@ describe Category do
   it { should respond_to(:shortcut) }
   its(:shortcut) { should be_a(String) }
 
-  it { should respond_to(:post_threads) }
+  it { should have_many(:post_threads) }
 end

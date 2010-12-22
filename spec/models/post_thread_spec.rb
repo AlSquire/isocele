@@ -7,7 +7,7 @@ describe PostThread do
 
   subject { @post_thread }
 
-  it { should respond_to(:category) }
+  it { should belong_to(:category) }
 
-  it { should respond_to(:posts) }
+  it { should have_many(:posts) }
 end
