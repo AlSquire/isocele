@@ -1,0 +1,3 @@
+= div_for(post_thread) do
+  = post_thread.inspect
+  = link_to "Voir", :action => :show, :category_shortcut => post_thread.category.shortcut, :id => post_thread.id

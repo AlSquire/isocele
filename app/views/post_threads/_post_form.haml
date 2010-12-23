@@ -1,0 +1,15 @@
+= form_for(Post.new, :url => { :action => :update, :category_shortcut => @category.shortcut, :id => @post_thread.id }, :method => :post) do |f|
+  %p
+    = f.label :author_name
+    = f.text_field :author_name
+  %p
+    = f.label :author_tripcode
+    = f.text_field :author_tripcode
+  %p
+    = f.label :subject
+    = f.text_field :subject
+  %p
+    = f.label :content
+    = f.text_area :content
+  %p
+    = f.submit
