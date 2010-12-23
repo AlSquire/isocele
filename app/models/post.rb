@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   validates_associated :post_thread
   validates_presence_of :post_thread
+  validates_presence_of :content
 
   before_validation :on => :create, :if => :first_of_the_thread? do
     build_post_thread(:category_id => category_id)

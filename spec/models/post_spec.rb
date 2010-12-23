@@ -8,6 +8,7 @@ describe Post do
 
   it { should respond_to(:content) }
   its(:content) { should be_a(String) }
+  it { should validate_presence_of(:content) }
 
   it { should respond_to(:author_name) }
   its(:author_name) { should be_a(String) }
