@@ -1,0 +1,9 @@
+BACKLOG:
+* flash messages
+* home page
+* pictures
+
+DEBTS:
+* integration tests
+* attr_protected
+* url_for record

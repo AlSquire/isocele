@@ -30,6 +30,7 @@ describe PostThreadsController do
     it { assigns(:post).should be_persisted }
     it { should respond_with(:redirect) }
     it { should redirect_to(:action => :show, :category_shortcut => category.shortcut, :id => assigns(:post_thread).id) }
+    pending "unvalid record"
   end
 
   describe "POST update" do
@@ -41,6 +42,7 @@ describe PostThreadsController do
     it { assigns(:post).should be_persisted }
     it { should respond_with(:redirect) }
     it { should redirect_to(:action => :show, :category_shortcut => category.shortcut, :id => post_thread.id) }
+    pending "unvalid record"
   end
 
 end
