@@ -26,11 +26,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug' # Can't use yet, gem linecache fail to build (using ruby 1.9.2)
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
